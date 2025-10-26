@@ -12,7 +12,7 @@ int next_hash = 1;
 
 int dfs_hash(int u) {
     if (children[u].empty()) {
-        node_hash[u] = 0; // Hash 0 for all leaves
+        node_hash[u] = 0;
         return 0;
     }
 
