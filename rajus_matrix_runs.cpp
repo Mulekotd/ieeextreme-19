@@ -3,8 +3,8 @@
 #include <algorithm>
 
 int N, M;
-std::vector<std::vector<long long>> grid; // Use long long for large values
-std::vector<std::vector<int>> dp;         // Memoization table
+std::vector<std::vector<long long>> grid;
+std::vector<std::vector<int>> dp; // Memoization table
 
 // Directions: up, down, left, right
 int dr[] = {-1, 1, 0, 0};
@@ -31,10 +31,7 @@ int solve(int r, int c) {
         }
     }
 
-    // Store and return the result
-    // Length = 1 (current cell) + longest path from its neighbors
     dp[r][c] = 1 + max_len_from_neighbor;
-
     return dp[r][c];
 }
 

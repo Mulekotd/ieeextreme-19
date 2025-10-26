@@ -62,7 +62,7 @@ bool solve(int N, std::vector<int>& A, std::string& result) {
 
 int main() {
     std::ios_base::sync_with_stdio(false);
-    std::cin.tie(nullptr);
+    std::cin.tie(NULL);
 
     int N;
     std::cin >> N;

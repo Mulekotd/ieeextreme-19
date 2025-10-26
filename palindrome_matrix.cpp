@@ -7,9 +7,7 @@ std::vector<int> pair;
 std::vector<int> rank_map;
 
 int find(int x) {
-    if (pair[x] != x)
-        pair[x] = find(pair[x]);
-
+    if (pair[x] != x) pair[x] = find(pair[x]);
     return pair[x];
 }
 
@@ -26,7 +24,7 @@ void unite(int x, int y) {
 
 int main() {
     std::ios_base::sync_with_stdio(false);
-    std::cin.tie(nullptr);
+    std::cin.tie(NULL);
     
     int n, m;
     std::cin >> n >> m;

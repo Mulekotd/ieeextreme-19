@@ -31,7 +31,6 @@ void solve() {
                 break;
             }
             
-            // Perform the operation
             total_ops++;
             
             // 1. The op starts flipping us right now
