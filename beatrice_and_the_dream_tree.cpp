@@ -26,9 +26,8 @@ int dfs_hash(int u) {
     std::sort(child_hashes.begin(), child_hashes.end());
 
     // 3. Map this canonical signature to a new integer hash
-    if (canonical_map.find(child_hashes) == canonical_map.end()) {
+    if (canonical_map.find(child_hashes) == canonical_map.end())
         canonical_map[child_hashes] = next_hash++;
-    }
 
     int my_hash = canonical_map[child_hashes];
     node_hash[u] = my_hash;
@@ -97,7 +96,7 @@ int main() {
     dfs_hash(1);
 
     // --- 3. Count identifiable nodes ---
-    total_identified = 1; // The root (node 1) is always identifiable
+    total_identified = 1;
     dfs_solve(1);
 
     std::cout << total_identified << "\n";

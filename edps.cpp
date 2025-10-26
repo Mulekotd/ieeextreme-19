@@ -32,12 +32,12 @@ bool solve(int N, std::vector<int>& A, std::string& result) {
 
             used[pos] = true;
             
-            if (build(l + 1, l + d, 0) && build(l + d + 2, r, 0)) {
+            if (build(l + 1, l + d, 0) && build(l + d + 2, r, 0))
                 return true;
-            }
             
             s[l] = ' ';
             s[l + d + 1] = ' ';
+
             used[pos] = false;
         }
         
@@ -74,12 +74,8 @@ int main() {
 
     std::string result;
 
-    if (solve(N, A, result)) {
-        std::cout << "Yes\n";
-        std::cout << result << "\n";
-    } else {
-        std::cout << "No\n";
-    }
+    if (solve(N, A, result)) { std::cout << "Yes\n"; std::cout << result << "\n"; }
+    else { std::cout << "No\n"; }
 
     return 0;
 }

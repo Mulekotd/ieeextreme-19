@@ -24,7 +24,7 @@ int main() {
 
     int B_max = 0;
     if (max_val > 0)
-        B_max = std::floor(log2(max_val));
+        B_max = std::floor(std::log2(max_val));
 
     std::vector<ll> Answers(K + 1, 0);
     std::vector<int> P(N + 1); // Prefix sum array
@@ -50,13 +50,11 @@ int main() {
                     r0++;
                 }
 
-                if (r0 > N)
-                    break;
+                if (r0 > N) break;
 
                 ll num_terms = (ll)N - r0 + 1;
                 ll first_len = (ll)r0 - l + 1;
                 ll last_len  = (ll)N - l + 1;
-
                 ll sum_for_l = (num_terms * (first_len + last_len)) / 2;
                 
                 T_k_V += sum_for_l;
