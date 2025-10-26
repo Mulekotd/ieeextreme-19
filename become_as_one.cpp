@@ -14,6 +14,7 @@ int main() {
     for (int i = 1; i <= N; ++i) {
         int val;
         std::cin >> val;
+        
         prefix_sum[i] = prefix_sum[i - 1] + (1LL << val);
     }
 
@@ -25,11 +26,8 @@ int main() {
         long long total = prefix_sum[R] - prefix_sum[L - 1];
         
         // Check if total is a power of two
-        if (total > 0 && (total & (total - 1)) == 0) {
-            std::cout << "Yes\n";
-        } else {
-            std::cout << "No\n";
-        }
+        if (total > 0 && (total & (total - 1)) == 0) { std::cout << "Yes\n"; }
+        else { std::cout << "No\n"; }
     }
 
     return 0;

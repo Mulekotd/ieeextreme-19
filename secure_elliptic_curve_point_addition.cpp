@@ -3,8 +3,9 @@
 
 typedef long long ll;
 
-ll safeMod(ll n, ll p)
+ll safeMod(ll n, ll p) {
     return (n % p + p) % p;
+}
 
 ll power(ll base, ll exp, ll mod) {
     ll res = 1;
@@ -21,8 +22,9 @@ ll power(ll base, ll exp, ll mod) {
     return res;
 }
 
-ll modInverse(ll n, ll p)
+ll modInverse(ll n, ll p) {
     return power(n, p - 2, p);
+}
 
 void solve() {
     ll a, b, p, x1, y1, x2, y2;
@@ -37,7 +39,7 @@ void solve() {
             ll num = safeMod(3 * x1 * x1 + a, p);
             ll den = safeMod(2 * y1, p);
     
-            lambda = safeMod(num modInverse(den, p), p);
+            lambda = safeMod(num * modInverse(den, p), p);
 
             x3 = safeMod(lambda * lambda - 2 * x1, p);
             y3 = safeMod(lambda * (x1 - x3) - y1, p);
@@ -61,7 +63,7 @@ void solve() {
 
 int main() {
     std::ios_base::sync_with_stdio(false);
-    std::cin.tie(NULL);
+    std::cin.tie(nullptr);
 
     int T;
     std::cin >> T;

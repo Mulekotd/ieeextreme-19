@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <cmath>
+#include <algorithm>
 
 typedef long long ll;
 
@@ -23,7 +24,7 @@ int main() {
 
     int B_max = 0;
     if (max_val > 0)
-        B_max = floor(log2(max_val));
+        B_max = std::floor(log2(max_val));
 
     std::vector<ll> Answers(K + 1, 0);
     std::vector<int> P(N + 1); // Prefix sum array
@@ -44,7 +45,7 @@ int main() {
                 // Find first r >= l s.t. P[r] - P[l-1] >= k
                 int target = P[l - 1] + k;
 
-                r0 = max(r0, l);
+                r0 = std::max(r0, l);
                 while (r0 <= N && P[r0] < target) {
                     r0++;
                 }

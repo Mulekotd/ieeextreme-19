@@ -18,14 +18,9 @@ void unite(int x, int y) {
     y = find(y);
 
     if (x != y) {
-        if (rank_map[x] < rank_map[y]) {
-            pair[x] = y;
-        } else if (rank_map[x] > rank_map[y]) {
-            pair[y] = x;
-        } else {
-            pair[y] = x;
-            rank_map[x]++;
-        }
+        if (rank_map[x] < rank_map[y]) { pair[x] = y; }
+        else if (rank_map[x] > rank_map[y]) { pair[y] = x; }
+        else { pair[y] = x; rank_map[x]++; }
     }
 }
 
